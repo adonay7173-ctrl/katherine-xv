@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#073b4c">
+<meta property="og:title" content="Katherine Alondra · Mis XV años">
+<meta property="og:description" content="Acompáñame a celebrar mis XV años · 28 de noviembre de 2026">
+<title>Katherine Alondra | Mis XV años · Pool Party</title>
+<style>
+:root{--navy:#073b4c;--teal:#087e8b;--aqua:#b8f2e6;--pink:#ff6b9a;--gold:#f6c85f;--cream:#fffaf1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(160deg,#063746,#087e8b 55%,#b8f2e6);color:var(--cream);font-family:Georgia,'Times New Roman',serif;text-align:center}
+button,a{font:inherit}.screen{min-height:100svh;display:grid;place-items:center;padding:28px 18px;position:relative;overflow:hidden}
+.screen:before,.screen:after{content:"";position:absolute;border:1px solid #ffffff35;border-radius:50%;width:320px;height:320px;pointer-events:none}.screen:before{top:-180px;left:-130px}.screen:after{bottom:-210px;right:-120px}
+.panel{width:min(100%,680px);padding:34px 24px;border:1px solid #ffffff70;border-radius:28px;background:#042f3c9c;box-shadow:0 18px 60px #001c2a55;backdrop-filter:blur(8px);position:relative}
+.kicker{letter-spacing:.28em;text-transform:uppercase;color:var(--aqua);font:600 12px Arial,sans-serif}
+h1{font-size:clamp(43px,10vw,78px);line-height:.98;margin:18px 0;color:#fff;text-shadow:0 4px 20px #001c2a80}
+h2{font-size:clamp(27px,6vw,42px);margin:8px 0 18px;color:var(--gold)}
+p{font-size:18px;line-height:1.55}.script{font-style:italic;color:#ffe2eb}
+.flower{font-size:42px;margin:10px}.btn{display:inline-block;text-decoration:none;border:0;border-radius:999px;padding:14px 23px;margin:8px 5px;background:var(--pink);color:#fff;font:700 13px Arial,sans-serif;letter-spacing:.08em;box-shadow:0 8px 22px #001c2a55;cursor:pointer}.btn.alt{background:var(--gold);color:var(--navy)}
+#invitation{display:none}.countdown{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:25px 0}.unit{min-width:74px;padding:12px 9px;border-radius:14px;background:#ffffff16;border:1px solid #ffffff45}.unit strong{display:block;font:700 30px Arial,sans-serif;color:var(--gold)}.unit span{font:10px Arial,sans-serif;letter-spacing:.12em}
+.info{margin:20px auto;padding:18px;border-top:1px solid #ffffff45;border-bottom:1px solid #ffffff45;max-width:430px}.info strong{display:block;color:var(--gold);font:700 12px Arial,sans-serif;letter-spacing:.2em;margin-bottom:7px}
+.note{font:12px Arial,sans-serif;color:#d7f9f1;margin-top:28px}
+@media(min-width:700px){.panel{padding:48px 54px}}
+</style>
+</head>
+<body>
+<section class="screen" id="welcome">
+ <div class="panel">
+  <div class="flower">🦩🌴</div>
+  <div class="kicker">Una celebración muy especial</div>
+  <h2>¿Estás listo?</h2>
+  <p class="script">El verano, la música y una noche para recordar…</p>
+  <button class="btn" onclick="openInvite()">ENTRAR A LA INVITACIÓN ▶</button>
+  <div class="note">POOL PARTY · MIS XV AÑOS</div>
+ </div>
+</section>
+<main class="screen" id="invitation">
+ <div class="panel">
+  <div class="flower">🌺 🦩 🌴</div>
+  <div class="kicker">Con mucha alegría te invito a celebrar</div>
+  <div class="kicker" style="margin-top:20px">Mis</div>
+  <h1>XV Años</h1>
+  <h2>Katherine Alondra</h2>
+  <p class="script">“Quiero compartir contigo una tarde llena de alegría, música y momentos inolvidables.”</p>
+  <div class="flower">✦ ✧ ✦</div>
+  <div class="kicker">La cuenta regresiva ha comenzado</div>
+  <div class="countdown" aria-label="Cuenta regresiva">
+   <div class="unit"><strong id="days">00</strong><span>DÍAS</span></div>
+   <div class="unit"><strong id="hours">00</strong><span>HORAS</span></div>
+   <div class="unit"><strong id="minutes">00</strong><span>MINUTOS</span></div>
+   <div class="unit"><strong id="seconds">00</strong><span>SEGUNDOS</span></div>
+  </div>
+  <div class="info">
+   <strong>SÁBADO · 28 DE NOVIEMBRE DE 2026</strong>
+   <p style="margin:8px 0">3:00 p. m.</p>
+  </div>
+  <div class="info">
+   <strong>📍 LUGAR</strong>
+   <p style="margin:8px 0">Salón Caoba</p>
+   <a class="btn alt" href="https://maps.app.goo.gl/SoxHx3dm5nRvPbkj7?g_st=ac" target="_blank" rel="noopener">VER UBICACIÓN</a>
+  </div>
+  <p class="script">Tu presencia hará este día aún más especial. ¡Te espero!</p>
+  <a class="btn" id="rsvp" href="https://wa.me/529933475522?text=Hola%2C%20confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Katherine%20Alondra." target="_blank" rel="noopener">CONFIRMAR ASISTENCIA 💬</a>
+  <div class="note">KATHERINE ALONDRA · MIS XV AÑOS · 2026</div>
+ </div>
+</main>
+<script>
+function openInvite(){document.getElementById('welcome').style.display='none';document.getElementById('invitation').style.display='grid';window.scrollTo(0,0)}
+const target=new Date('2026-11-28T15:00:00-06:00').getTime();
+function tick(){let diff=Math.max(0,target-Date.now());let d=Math.floor(diff/86400000);let h=Math.floor(diff%86400000/3600000);let m=Math.floor(diff%3600000/60000);let s=Math.floor(diff%60000/1000);
+for(const [id,val] of [['days',d],['hours',h],['minutes',m],['seconds',s]])document.getElementById(id).textContent=String(val).padStart(2,'0')}
+tick();setInterval(tick,1000);
+</script>
+</body></html>
